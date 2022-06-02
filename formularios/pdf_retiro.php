@@ -3,6 +3,7 @@
 include('../db.php');
 
 require_once ('../database/dompdf/autoload.inc.php');
+
 use Dompdf\dompdf;
 
 $user = $_SESSION['user'];
@@ -15,7 +16,7 @@ if(isset($_GET['id_cntr'])) {   // me traigo la informacion segun ID seleccionad
 
     $query_file ="SELECT carga.booking, carga.cliente, carga.vessel, carga.voyage, carga.unload_place, carga.final_point, carga.commodity, cntr.retiro_place, carga.oceans_line, cntr.cntr_type FROM carga INNER JOIN cntr ON carga.booking = cntr.booking WHERE cntr.id_cntr = '$id_cntr'";
     $result_file = mysqli_query($conn, $query_file);
-
+    
     if (mysqli_num_rows($result_file) == 1) {
         $row = mysqli_fetch_array($result_file);
 
@@ -38,7 +39,7 @@ if(isset($_GET['id_cntr'])) {   // me traigo la informacion segun ID seleccionad
         $content .='</head>';
         $content .='<body>';
         $content .='<div style=" text-align:center;background: #17A589;color: white; margin-left: 5%; margin-top:0%; margin-bottom: 6px; font-family: sans-serif; display:block">';
-        $content .='<img style="height: 5.2rem; width: auto; float: left; padding-left: 1rem;" src="../images/logo Con fondo azul.png" alt="">';
+        $content .='<img style="height: 5.2rem; width: auto; float: left; padding-left: 1rem;" src="https://botzero.tech/tcargocomex/images/tcargo/tcargo.png" alt="">';
         $content .='<h1 style="font-family: sans-serif; margin-left: 2%;">Instuctivo para Retiro de Unidad</h1>';
         $content .='<p style="font-size: 14px; font-family: sans-serif; color: white; margin-left: 5%; ">' . $company . ' | Generado por '.$user.'</p>';
         $content .='</div>';

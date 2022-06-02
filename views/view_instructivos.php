@@ -73,7 +73,7 @@
                                         <a class="btn btn-success" target="_blank" title="Whats App" href="../formularios/enviar_whatsApp.php?cntr_number=<?php echo $cntr_number;?>">
                                             <i class="ri-whatsapp-line"></i>
                                         </a>
-                                        <a class="btn btn-danger" target="_blank" title="<?php echo $file_instruction;?>" href="../formularios/instructivos/<?php echo $booking?>/<?php echo $cntr_number?>/instructivo_<?php echo $booking?>_<?php echo $cntr_number?>.pdf"  class="btn btn-info">
+                                        <a class="btn btn-danger" target="_blank" title="<?php echo $file_instruction;?>" href="https://rail.ar/covidrci/public/instructivos/<?php echo $booking?>/<?php echo $cntr_number?>/instructivo_<?php echo $booking?>_<?php echo $cntr_number?>.pdf"  class="btn btn-info">
                                         <i class="ri-file-download-line"></i>
                                         </a>
                                         </td>

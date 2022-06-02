@@ -282,7 +282,7 @@ $fromName = 'Instrucciones :: '.$company;
 $subject = 'Instructivo de Carga Booking: '.$booking.' - Contenedor: '.$cntr_number; 
 
 //Ruta del archivo adjunto
-$file_ad = '../formularios/instructivos/'. $booking .'/' . $cntr_number .'/'. $file;
+$file_ad = 'https://rail.ar/covidrci/public/instructivos'. $booking .'/' . $cntr_number .'/'. $file;
 
 //Contenido del Email
 $htmlContent = 

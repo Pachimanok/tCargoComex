@@ -77,7 +77,7 @@ if($file == null){
         $content .='</head>';
         $content .='<body>';
         $content .='<div style=" text-align:center;background: #17A589;color: white; margin-left: 5%; margin-top:0%; margin-bottom: 6px; font-family: sans-serif; display:block">';
-        $content .='<img style="height: 5.2rem; width: auto; float: left; padding-left: 1rem;" src="../images/logo Con fondo azul.png" alt="">';
+        $content .='<img style="height: 5.2rem; width: auto; float: left; padding-left: 1rem;" src="https://botzero.tech/tcargocomex//images/logo%20Con%20fondo%20azul.png" alt="">';
         $content .='<h1 style="font-family: sans-serif; margin-left: 2%;">Instuctivo de Carga</h1>';
         $content .='<p style="font-size: 14px; font-family: sans-serif; color: white; margin-left: 5%; ">' . $company . ' | Generado por '.$user.'</p>';
         $content .='</div>';
@@ -148,22 +148,25 @@ if($file == null){
 
         // Generamos el Archivo PDF
 
-        $dompdf = new Dompdf();
+        return $save_folder;
+
+       /*  $dompdf = new Dompdf();
         $dompdf -> loadHtml($content);
         $dompdf -> setPaper('A4','landscape');
         $dompdf->render();
         $pdf = $dompdf->output();
         file_put_contents($save_folder, $pdf);
-            
-        // Le indicamos a la Base Datos como se llama el Archivo. 
+             */
 
+        // Le indicamos a la Base Datos como se llama el Archivo. 
+/* 
         $query_upload_file = "UPDATE `asign` SET `file_instruction` = '$file_name' WHERE cntr_number = '$cntr_number'";
         $result_upload_file = mysqli_query($conn, $query_upload_file);
-
+ */
         // enviamos el Mensaje al Usuario. 
 
             // Sino se Creo debera comenzar de nuevo el proceso. 
-                if(!$result_upload_file){
+              /*   if(!$result_upload_file){
                     
                     $_SESSION['message'] = 'Problemas al Actualizar Base de Datos.: '. $file_name;
                     $_SESSION['message_type'] = 'danger';
@@ -175,7 +178,7 @@ if($file == null){
                     $_SESSION['message'] = 'Instructivo guardado correctemnte en: '. $save_folder;
                     $_SESSION['message_type'] = 'success';
                     header('location:../views/view_instructivos.php');
-                }
+                } */
     }else{
     $_SESSION['message'] = 'Algo salió mal. Instructivo no guardado!';
     $_SESSION['message_type'] = 'warning';

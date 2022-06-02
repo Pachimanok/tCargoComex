@@ -75,7 +75,7 @@ if (mysqli_num_rows($result) == 1) {
             
                     </div>
                     <div class="col-sm-3">
-                        <a href="../formularios/pdf_retiro.php?id_cntr=<?php echo $id_cntr ;?>" class="btn btn-outline-primary">
+                        <a href="https://rail.ar/covidrci/public/api/imprimir?id_cntr=<?php echo $id_cntr ;?>" class="btn btn-outline-primary">
                             Descargar en PDF
                         </a>
                     </div>

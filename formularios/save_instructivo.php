@@ -112,7 +112,6 @@ if(mysqli_num_rows($result) == 1){
 
 <div class="container">
     <div style="border-radius: 10px;" class="card border border-secondary">
-    <form action="../pdf.php">
         <div style="text-align:center;"class="card-header">
             Instructivo de Carga Operacion n° <?php echo $id_asgin;?>
         </div>
@@ -335,14 +334,14 @@ if(mysqli_num_rows($result) == 1){
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6" style="text-align: center;" >
                     <!--a href="../formularios/enviar_whatsApp.php?cntr_number=<?php echo $cntr_number?>" target="_blank" class="btn btn-info">WhatsApp</a-->
-                    <a href="../formularios/pdf.php?cntr_number=<?php echo $cntr_number?>" class="btn btn-info">Generar</a>
+                    <a href="https://rail.ar/covidrci/public/api/imprimirIns?cntr_number=<?php echo $cntr_number?>" class="btn btn-info">Generar</a>
                     <a href="../views/view_instructivos.php"  class="btn btn-secondary">Instrucciones</a>
                     <!--a href="../formularios/enviar_mail.php?cntr_number=<?php echo $cntr_number?>" class="btn btn-info">E-mail</a-->
                 </div>
                 <div class="col-sm-3"></div>
 
             </div>
-        </form>
+        
         </div>
     </div>
 </div>

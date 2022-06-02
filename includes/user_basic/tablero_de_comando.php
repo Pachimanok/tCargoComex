@@ -265,6 +265,65 @@ $result_detalles_sabado = mysqli_query($conn, $query_detalles_sabado);
     </div> 
 </div-->
 <!-- /Widgets -->
+<?php $query_activas = "SELECT count(main_status) from cntr WHERE main_status != 'NO ASIGNADA' AND main_status != 'ON BOARD'AND main_status != 'TERMINADA'";
+        $result_activas= mysqli_query($conn, $query_activas);
+        if (mysqli_num_rows($result_activas) == 1) {
+        $row = mysqli_fetch_array($result_activas);
+        $cantidad_activas =  $row['count(main_status)'];}
+
+        $query_no_asigned = "SELECT count(main_status) from cntr WHERE main_status = 'NO ASIGNADA'";
+        $result_no_asigned= mysqli_query($conn, $query_no_asigned);
+        if (mysqli_num_rows($result_no_asigned) == 1) {
+        $row = mysqli_fetch_array($result_no_asigned);
+        $cantidad_no_asigned = $row['count(main_status)'];}
+
+        $query_on_board = "SELECT count(main_status) from cntr where main_status = 'ON BOARD'";
+        $result_on_board= mysqli_query($conn, $query_on_board);
+        if (mysqli_num_rows($result_on_board) == 1) {
+            $row = mysqli_fetch_array($result_on_board);
+            $cantidad_on_board =  $row['count(main_status)'];}
+            
+        $query_problem = "SELECT count(main_status) from cntr where  main_status = 'CON PROBLEMA'";
+        $result_problem = mysqli_query($conn, $query_problem);
+        if (mysqli_num_rows($result_problem) == 1) {
+            $row = mysqli_fetch_array($result_problem);
+            $cantidad_problem =  $row['count(main_status)'];}
+        
+        $query_assigned = "SELECT count(main_status) from cntr where main_status = 'ASIGNADA'";
+        $result_assigned= mysqli_query($conn, $query_assigned);
+        if (mysqli_num_rows($result_assigned) == 1) {
+            $row = mysqli_fetch_array($result_assigned);
+            $cantidad_assigned =  $row['count(main_status)'];}
+
+        $query_go_to_load = "SELECT count(main_status) from cntr where main_status = 'YENDO A CARGAR'";
+        $result_go_to_load = mysqli_query($conn, $query_go_to_load);
+        if (mysqli_num_rows($result_go_to_load) == 1) {
+            $row = mysqli_fetch_array($result_go_to_load);
+            $cantidad_go_to_load =  $row['count(main_status)'];}
+
+        $query_loading = "SELECT count(main_status) from cntr where main_status = 'CARGANDO'";
+        $result_loading= mysqli_query($conn, $query_loading);
+        if (mysqli_num_rows($result_loading) == 1) {
+            $row = mysqli_fetch_array($result_loading);
+            $cantidad_loading =  $row['count(main_status)'];}
+
+        $query_custom_place = "SELECT count(main_status) from cntr where  main_status = 'CUSTOM PLACE'";
+        $result_custom_place= mysqli_query($conn, $query_custom_place);
+        if (mysqli_num_rows($result_custom_place) == 1) {
+            $row = mysqli_fetch_array($result_custom_place);
+            $cantidad_custom_place =  $row['count(main_status)'];}
+        
+        $query_go_to_unload = "SELECT count(main_status) from cntr where main_status = 'YENDO A DESCARGAR'";
+        $result_go_to_unload= mysqli_query($conn, $query_go_to_unload);
+        if (mysqli_num_rows($result_go_to_unload) == 1) {
+            $row = mysqli_fetch_array($result_go_to_unload);
+            $cantidad_go_to_unload =  $row['count(main_status)'];}
+        
+        $query_staking = "SELECT count(main_status) from cntr where main_status = 'STAKING'";
+        $result_staking= mysqli_query($conn, $query_staking);
+        if (mysqli_num_rows($result_staking) == 1) {
+            $row = mysqli_fetch_array($result_staking);
+            $cantidad_staking =  $row['count(main_status)'];}?>
 <div class="breadcrumbs">
     <h2 style="text-align: center; background:#17A589; color:white; padding-top:0.5%;">Cargas por Status</h2>
     <div class="breadcrumbs-inner">
