@@ -13,13 +13,13 @@ if(isset($_GET['id'])) {
 
     $_SESSION['message'] = 'Se eliminó correctamente la Agencia';
     $_SESSION['message_type'] = 'success';
-    header('location:../views/misAgencias_super_user.php');
+    header('location:../views/agencias_super_user.php');
 
   }else{
     
         $_SESSION['message'] = 'No se pudo eliminar Agencia. Por favor reintente';
         $_SESSION['message_type'] = 'danger';
-        header('location:../views/misAgencias_super_user.php');
+        header('location:../views/agencias_super_user.php');
 
   }
     

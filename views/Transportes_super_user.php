@@ -312,8 +312,11 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Fin Modal Editar -->
                 <?php }   ?>
+                <tbody>
+
             </table>  
         </div>
         <form action="../Reporte_user_basic/misTransportes.php" method="POST">

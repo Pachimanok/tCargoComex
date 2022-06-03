@@ -32,13 +32,13 @@ if (isset($_GET['id'])) {   // me traigo la informacion segun ID seleccionada.
 
     $_SESSION['message'] = 'la agencia' . $razon_social. ' no pudo ser actualizado';
     $_SESSION['message_type'] = 'danger';
-   header('location:../views/misAgencias_super_user.php'); 
+   header('location:../views/agencias_super_user.php'); 
 
   }else{
 
     $_SESSION['message'] = 'Se editó correctamente la agencia '. $razon_social;
     $_SESSION['message_type'] = 'success';
-    header('location:../views/misAgencias_super_user.php'); 
+    header('location:../views/agencias_super_user.php'); 
   }
   
   }
@@ -64,12 +64,12 @@ if (isset($_POST['agregar_agencia'])){
 
     $_SESSION['message'] = 'Algo falló. Intenta nuevamente cargar Agencia';
     $_SESSION['message_type'] = 'danger';
-    header('location:../views/misAgencias_super_user.php'); 
+    header('location:../views/agencias_super_user.php'); 
   }else{
 
     $_SESSION['message'] = 'Se cargó correctamente la agencia '. $razon_social;
     $_SESSION['message_type'] = 'success';
-    header('location:../views/misAgencias_super_user.php'); 
+    header('location:../views/agencias_super_user.php'); 
   }
   }
 

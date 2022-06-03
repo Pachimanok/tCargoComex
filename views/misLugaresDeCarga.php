@@ -286,9 +286,7 @@
                             <button type="submit" name="cargar_lugar" class="btn btn-primary">Agregar Lugar</button>
                         </div>
                         <div class="col-sm-5"></div>
-
                     </div>
-
                 </form>
             </div>
         </div>
