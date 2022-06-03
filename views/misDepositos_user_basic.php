@@ -34,7 +34,7 @@
 
                         $id = $row['id'];
                         $title = $row['title'];
-                        $andress = $row['andress'];
+                        $address = $row['address'];
                         $country = $row['country'];
                         $city = $row['city'];
                         $km_from_town = $row['km_from_town'];
@@ -83,7 +83,7 @@
                                                     <label class="form-control-label" for="">Address:</label>
                                                 </div>
                                                 <div class="col-sm-3">
-                                                    <input class="form-control" type="text" name="andress" value="<?php echo $andress; ?>">
+                                                    <input class="form-control" type="text" name="address" value="<?php echo $address; ?>">
                                                 </div>
                                                 <div class="col-sm-1 pt-2">
                                                     <label class="form-control-label">City:</label>
@@ -151,7 +151,7 @@
                                                         <label class="form-control-label" for="">Direccion:</label>
                                                     </div>
                                                     <div class="col-sm-8 pt-2">
-                                                        <p><?php echo $andress . ' - ' . $city . ' - ' . $country; ?></p>
+                                                        <p><?php echo $address . ' - ' . $city . ' - ' . $country; ?></p>
                                                     </div>
                                                 </div>
                                                 <br>

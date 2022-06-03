@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {   // me traigo la informacion segun ID seleccionada.
    if (isset($_POST['editar_deposito'])) {
 
     $title= $_POST['title'];
-    $andress=  $_POST['andress'];
+    $address=  $_POST['address'];
     $city =  $_POST['city'];
     $country =  $_POST['country'];
     $lat_lon =  $_POST['lat_lon'];
@@ -22,7 +22,7 @@ if (isset($_GET['id'])) {   // me traigo la informacion segun ID seleccionada.
     $user = $_SESSION['user'];
     $company = $_SESSION['company'];
 
-    $query = "UPDATE `depositos_de_retiro` SET `title`='$title',`andress`= '$andress',`country`='$country' ,`city`='$city',`km_from_town`='$km_from_town',`lat_lon`='$lat_lon',`link_maps`='$link_maps',`user`='$user',`empresa`='$company' WHERE id = '$id'";
+    $query = "UPDATE `depositos_de_retiro` SET `title`='$title',`address`= '$address',`country`='$country' ,`city`='$city',`km_from_town`='$km_from_town',`lat_lon`='$lat_lon',`link_maps`='$link_maps',`user`='$user',`empresa`='$company' WHERE id = '$id'";
     $result = mysqli_query($conn, $query);
 
   }
@@ -46,7 +46,7 @@ if (isset($_GET['id'])) {   // me traigo la informacion segun ID seleccionada.
 if (isset($_POST['agregar_deposito'])){
 
   $title= $_POST['title'];
-  $andress=  $_POST['andress'];
+  $address=  $_POST['address'];
   $city =  $_POST['city'];
   $country =  $_POST['country'];
   $lat_lon =  $_POST['lat_lon'];
@@ -55,8 +55,8 @@ if (isset($_POST['agregar_deposito'])){
   $user = $_SESSION['user'];
   $company = $_SESSION['company'];
     
-  $query = "INSERT INTO `depositos_de_retiro` (`title`, `andress`, `city`, `country`, `lat_lon`, `link_maps`, `km_from_town`,`user`, `empresa`) 
-    VALUES ('$title','$andress','$city','$country','$lat_lon','$link_maps','$km_from_town','$user','$empresa')";
+  $query = "INSERT INTO `depositos_de_retiro` (`title`, `address`, `city`, `country`, `lat_lon`, `link_maps`, `km_from_town`,`user`, `empresa`) 
+    VALUES ('$title','$address','$city','$country','$lat_lon','$link_maps','$km_from_town','$user','$empresa')";
     $result = mysqli_query($conn, $query);
     
   if(!$result){

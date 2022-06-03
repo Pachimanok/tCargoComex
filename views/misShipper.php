@@ -40,7 +40,7 @@
                         $city = $row['city'];
                         $country = $row['country'];
                         $postal_code = $row['postal_code'];
-                        $andress = $row['andress'];
+                        $address = $row['address'];
                         $remarks = $row['remarks'];
                         $create_user = $row['create_user'];
                     ?>
@@ -97,7 +97,7 @@
                                             <label class="form-control-label">Address:</label>
                                         </div>
                                         <div class="col-sm-3">
-                                            <input class="form-control" style="margin-right: 1%; " type="text" name="andress" value="<?php echo $andress; ?>">
+                                            <input class="form-control" style="margin-right: 1%; " type="text" name="address" value="<?php echo $address; ?>">
                                         </div>
                                         <div class="col-sm-1 pt-2">
                                             <label class="form-control-label">City:</label>
@@ -173,7 +173,7 @@
                                             <label class="form-control-label" for="">Address</label>
                                         </div>
                                         <div class="col-sm-8 pt-2">
-                                            <p><?php echo $andress . ' - ' . $city . ' - ' . $country . ' (' . $postal_code . ')'; ?></p>
+                                            <p><?php echo $address . ' - ' . $city . ' - ' . $country . ' (' . $postal_code . ')'; ?></p>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -247,7 +247,7 @@
                         <label class="form-control-label">Address:</label>
                     </div>
                     <div class="col-sm-2">
-                        <input class="form-control" style="margin-right: 1%; " type="text" name="andress" placeholder="Street Name 188.." required>
+                        <input class="form-control" style="margin-right: 1%; " type="text" name="address" placeholder="Street Name 188.." required>
                     </div>
                     <div class="col-sm-1 pt-2">
                         <label class="form-control-label">City:</label>

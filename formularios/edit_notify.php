@@ -11,7 +11,7 @@ if (isset($_GET['id'])) {   // me traigo la informacion segun ID seleccionada.
 
     $razon_social= $_POST['razon_social'];
     $tax_id =  $_POST['tax_id'];
-    $andress =  $_POST['andress'];
+    $address =  $_POST['address'];
     $city =  $_POST['city'];
     $country =  $_POST['country'];
     $postal_code =  $_POST['postal_code'];
@@ -19,7 +19,7 @@ if (isset($_GET['id'])) {   // me traigo la informacion segun ID seleccionada.
     $user = $_SESSION['user'];
     $company = $_SESSION['company'];
 
-    $query = "UPDATE `customer.ntfy` set razon_social = '$razon_social' , tax_id = '$tax_id' ,andress = '$andress' ,city = '$city' ,country = '$country' ,postal_code = '$postal_code',remarks = '$remarks' ,create_user = '$user' ,company = '$company' WHERE id = '$id'";
+    $query = "UPDATE `customer.ntfy` set razon_social = '$razon_social' , tax_id = '$tax_id' ,address = '$address' ,city = '$city' ,country = '$country' ,postal_code = '$postal_code',remarks = '$remarks' ,create_user = '$user' ,company = '$company' WHERE id = '$id'";
     $result = mysqli_query($conn, $query);
 
     if(!$result){

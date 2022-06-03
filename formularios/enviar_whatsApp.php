@@ -58,7 +58,7 @@ if($file == null){
     cntr.modo_pago_out, 
     cntr.plazo_de_pago_out,
     customer_load_place.link_maps,
-    customer_load_place.andress,
+    customer_load_place.address,
     customer_load_place.city
     FROM carga 
     INNER JOIN cntr 
@@ -100,7 +100,7 @@ if($file == null){
     $plazo_de_pago_out = $row['plazo_de_pago_out'];
     $load_date = $row['load_date'];
     $link_maps = $row['link_maps'];
-    $andress = $row['andress'];
+    $address = $row['address'];
     $city = $row['city'];
 
     // armamos el Contenido del Instructivo.
@@ -126,7 +126,7 @@ if($file == null){
     $content .='<p style="font-family: sans-serif; text-align: left; margin: 0.5rem 0 0.5rem 1rem; font-size: medium;">Peso Neto: <small style="font-family: sans-serif; color: gray ;font-size: medium;">'.$net_weight.'</small></p>';
     $content .='<p style="font-family: sans-serif; text-align: left; margin: 0.5rem 0 0.5rem 1rem; font-size: medium;">Lugar de Rertiro: <small style="font-family: sans-serif; color: gray ;font-size: medium;">'.$retiro_place.'</small></p>';
     $content .='<p style="font-family: sans-serif; text-align: left; margin: 0.5rem 0 0.5rem 1rem; font-size: medium;">Lugar de Carga: <small style="font-family: sans-serif; color: gray ;font-size: medium;">'.$load_place.' | </small> Fecha de Carga:<small style="font-family: sans-serif; color: gray ;margin: 0.5rem 0 0.5rem 1rem;font-size: medium;"> '.$load_date.'</small> </p>';
-    $content .='<p style="font-family: sans-serif; text-align: left; margin: 0.5rem 0 0.5rem 1rem; font-size: medium;">Direccion: <small style="font-family: sans-serif; color: gray ;margin: 0.5rem 0 0.5rem 1rem;font-size: medium;"><a href="'.$link_maps.'"> '.$andress.' - '. $city . '</small></a> </p>';
+    $content .='<p style="font-family: sans-serif; text-align: left; margin: 0.5rem 0 0.5rem 1rem; font-size: medium;">Direccion: <small style="font-family: sans-serif; color: gray ;margin: 0.5rem 0 0.5rem 1rem;font-size: medium;"><a href="'.$link_maps.'"> '.$address.' - '. $city . '</small></a> </p>';
     $content .='<p style="font-family: sans-serif; text-align: left; margin: 0.5rem 0 0.5rem 1rem; font-size: medium;">Lugar de Aduana: <small style="font-family: sans-serif; color: gray ;font-size: medium;"> '.$custom_place.' |</small> Despachante:<small style="font-family: sans-serif; color: gray ;font-size: medium;"> '.$custom_agent.'</small> </p>';
     $content .='<p style="font-family: sans-serif; text-align: left; margin: 0.5rem 0 0.5rem 1rem; font-size: medium;">Puerto de Carga: <small style="font-family: sans-serif; color: gray ;font-size: medium;"> '.$unload_place.' | </small> Cut Off Fisico:<small style="font-family: sans-serif; color: gray ;font-size: medium;">'.$cut_off_fis.'</small> </p>';
     $content .='<p style="font-family: sans-serif; text-align: left; margin: 0.5rem 0 0.5rem 1rem; font-size: medium;">Vesel: <small style="font-family: sans-serif; color: gray ;font-size: medium;">'.$vessel.' - '.$voyage.' | </small>Armador:<small style="font-family: sans-serif; color: gray ;font-size: medium;">'.$oceans_line.'</small> </p>';

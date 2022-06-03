@@ -36,7 +36,7 @@
 
                         $id = $row['id'];
                         $description = $row['description'];
-                        $andress = $row['andress'];
+                        $address = $row['address'];
                         $city = $row['city'];
                         $country = $row['country'];
                         $link_maps = $row['link_maps'];
@@ -49,7 +49,7 @@
                         <tr>
                             <td><?php echo $id; ?></td>
                             <td><?php echo $description; ?></td>
-                            <td><?php echo $andress; ?></td>
+                            <td><?php echo $address; ?></td>
                             <td><?php echo $city; ?></td>
                             <td><?php echo $country; ?></td>
                             <td><a target="_blank" style="color:blue; margin-left:30%;" href="<?php echo $link_maps; ?>"><i class="ti-map-alt"></i></a></td>
@@ -91,7 +91,7 @@
                                             <label class="form-control-label" for="">Address:</label>
                                         </div>
                                         <div class="col-sm-3">
-                                            <input class="form-control" type="text" name="andress" value="<?php echo $andress; ?>">
+                                            <input class="form-control" type="text" name="address" value="<?php echo $address; ?>">
                                         </div>
                                         <div class="col-sm-1 pt-2">
                                             <label class="form-control-label">City:</label>
@@ -168,7 +168,7 @@
                                                 <label class="form-control-label" for="">Direccion:</label>
                                             </div>
                                             <div class="col-sm-8 pt-2">
-                                                <p><?php echo $andress . ' - ' . $city . ' - ' . $country; ?></p>
+                                                <p><?php echo $address . ' - ' . $city . ' - ' . $country; ?></p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -239,7 +239,7 @@
                             <label class="form-control-label">Address:</label>
                         </div>
                         <div class="col-sm-2">
-                            <input class="form-control" style="margin-right: 1%; " type="text" name="andress" placeholder="Street Name 188.." required>
+                            <input class="form-control" style="margin-right: 1%; " type="text" name="address" placeholder="Street Name 188.." required>
                         </div>
                         <div class="col-sm-1 pt-2">
                             <label class="form-control-label">City:</label>

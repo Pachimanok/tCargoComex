@@ -2,7 +2,7 @@
 
 
   $description = $_POST['description'];
-  $andress =  $_POST['andress'];
+  $address =  $_POST['address'];
   $city =  $_POST['city'];
   $country =  $_POST['country'];
   $km_from_town =  $_POST['km_from_town'];
@@ -12,7 +12,7 @@
   $user = $_SESSION['user'];
   $company = $_SESSION['company'];
 
-  $query = "INSERT INTO `customer_load_place` (`description`, `andress`, `city`, `country`, `lat_lon`, `link_maps`, `km_from_town`,`user`, `company`, `remarks`) VALUES ('$description','$andress','$city','$country','$lat_lon','$link_maps','$km_from_town','$user','$company','$remarks')";
+  $query = "INSERT INTO `customer_load_place` (`description`, `address`, `city`, `country`, `lat_lon`, `link_maps`, `km_from_town`,`user`, `company`, `remarks`) VALUES ('$description','$address','$city','$country','$lat_lon','$link_maps','$km_from_town','$user','$company','$remarks')";
   $result = mysqli_query($conn, $query);
 
   if (!$result) {

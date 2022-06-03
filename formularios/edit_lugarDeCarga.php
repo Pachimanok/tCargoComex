@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {   // me traigo la informacion segun ID seleccionada.
    if (isset($_POST['editar_lugarDeCarga'])) {
 
     $description= $_POST['description'];
-    $andress=  $_POST['andress'];
+    $address=  $_POST['address'];
     $city =  $_POST['city'];
     $country =  $_POST['country'];
     $lat_lon =  $_POST['lat_lon'];
@@ -19,7 +19,7 @@ if (isset($_GET['id'])) {   // me traigo la informacion segun ID seleccionada.
     $user = $_SESSION['user'];
     $company = $_SESSION['company'];
 
-    $query = "UPDATE `customer_load_place` set description = '$description' , lat_lon = '$lat_lon' ,andress = '$andress' ,city = '$city' ,country = '$country' ,km_from_town = '$km_from_town',remarks = '$remarks' ,created_at = '$user' ,company = '$company' WHERE id = '$id'";
+    $query = "UPDATE `customer_load_place` set description = '$description' , lat_lon = '$lat_lon' ,address = '$address' ,city = '$city' ,country = '$country' ,km_from_town = '$km_from_town',remarks = '$remarks' ,created_at = '$user' ,company = '$company' WHERE id = '$id'";
 $result = mysqli_query($conn, $query);
   
   
