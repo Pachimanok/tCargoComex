@@ -142,188 +142,78 @@ $result_detalles_viernes = mysqli_query($conn, $query_detalles_viernes);
 
 $query_detalles_sabado = "SELECT cntr.cntr_number , cntr.cntr_type, cntr.retiro_place, status_cntr, carga.shipper from cntr INNER JOIN carga ON carga.booking = cntr.booking where  cntr.user_cntr = '$user' AND `load_date` <= (DATE_ADD(CURDATE(), INTERVAL 6 DAY)) AND load_date >= CURDATE() AND WEEKDAY(`load_date`) = 5";
 $result_detalles_sabado = mysqli_query($conn, $query_detalles_sabado);
+
+$query_activas = "SELECT count(main_status) from cntr WHERE main_status != 'NO ASIGNADA' AND main_status != 'ON BOARD'AND main_status != 'TERMINADA'";
+$result_activas = mysqli_query($conn, $query_activas);
+if (mysqli_num_rows($result_activas) == 1) {
+    $row = mysqli_fetch_array($result_activas);
+    $cantidad_activas =  $row['count(main_status)'];
+}
+
+$query_no_asigned = "SELECT count(main_status) from cntr WHERE main_status = 'NO ASIGNADA'";
+$result_no_asigned = mysqli_query($conn, $query_no_asigned);
+if (mysqli_num_rows($result_no_asigned) == 1) {
+    $row = mysqli_fetch_array($result_no_asigned);
+    $cantidad_no_asigned = $row['count(main_status)'];
+}
+
+$query_on_board = "SELECT count(main_status) from cntr where main_status = 'ON BOARD'";
+$result_on_board = mysqli_query($conn, $query_on_board);
+if (mysqli_num_rows($result_on_board) == 1) {
+    $row = mysqli_fetch_array($result_on_board);
+    $cantidad_on_board =  $row['count(main_status)'];
+}
+
+$query_problem = "SELECT count(main_status) from cntr where  main_status = 'CON PROBLEMA'";
+$result_problem = mysqli_query($conn, $query_problem);
+if (mysqli_num_rows($result_problem) == 1) {
+    $row = mysqli_fetch_array($result_problem);
+    $cantidad_problem =  $row['count(main_status)'];
+}
+
+$query_assigned = "SELECT count(main_status) from cntr where main_status = 'ASIGNADA'";
+$result_assigned = mysqli_query($conn, $query_assigned);
+if (mysqli_num_rows($result_assigned) == 1) {
+    $row = mysqli_fetch_array($result_assigned);
+    $cantidad_assigned =  $row['count(main_status)'];
+}
+
+$query_go_to_load = "SELECT count(main_status) from cntr where main_status = 'YENDO A CARGAR'";
+$result_go_to_load = mysqli_query($conn, $query_go_to_load);
+if (mysqli_num_rows($result_go_to_load) == 1) {
+    $row = mysqli_fetch_array($result_go_to_load);
+    $cantidad_go_to_load =  $row['count(main_status)'];
+}
+
+$query_loading = "SELECT count(main_status) from cntr where main_status = 'CARGANDO'";
+$result_loading = mysqli_query($conn, $query_loading);
+if (mysqli_num_rows($result_loading) == 1) {
+    $row = mysqli_fetch_array($result_loading);
+    $cantidad_loading =  $row['count(main_status)'];
+}
+
+$query_custom_place = "SELECT count(main_status) from cntr where  main_status = 'CUSTOM PLACE'";
+$result_custom_place = mysqli_query($conn, $query_custom_place);
+if (mysqli_num_rows($result_custom_place) == 1) {
+    $row = mysqli_fetch_array($result_custom_place);
+    $cantidad_custom_place =  $row['count(main_status)'];
+}
+
+$query_go_to_unload = "SELECT count(main_status) from cntr where main_status = 'YENDO A DESCARGAR'";
+$result_go_to_unload = mysqli_query($conn, $query_go_to_unload);
+if (mysqli_num_rows($result_go_to_unload) == 1) {
+    $row = mysqli_fetch_array($result_go_to_unload);
+    $cantidad_go_to_unload =  $row['count(main_status)'];
+}
+
+$query_staking = "SELECT count(main_status) from cntr where main_status = 'STAKING'";
+$result_staking = mysqli_query($conn, $query_staking);
+if (mysqli_num_rows($result_staking) == 1) {
+    $row = mysqli_fetch_array($result_staking);
+    $cantidad_staking =  $row['count(main_status)'];
+}
 ?>
 
-<!-- Widgets  -->
-
-<!-- Widgets  -->
-
-<!--div  class="breadcrumbs">
- <h2 style="text-align: center; background:#17A589; color:white; padding-top:0.5%;">Cargas por día</h2>
-    <div  class="breadcrumbs-inner"> 
-        <br> 
-        <div class="row">
-            <div class="col-lg-2 col-md-6">
-                <div  class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-five">
-                            <div data-toggle="modal" data-target="#lunes" class="stat-icon dib flat-color-3">
-                                <i class="fa fa-calendar-o"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="text-left dib">
-                                    <div class="stat-text"><span class="count"><?php echo $cantidad_lunes; ?></span></div>
-                                    <div class="stat-heading">Lunes</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <div   class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-five">
-                        <div data-toggle="modal" data-target="#martes" class="stat-icon dib flat-color-3">
-                                <i class="fa fa-calendar-o"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="text-left dib">
-                                    <div class="stat-text"><span class="count"><?php echo $cantidad_martes; ?></span></div>
-                                    <div class="stat-heading">Martes</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <div   class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-five">
-                        <div data-toggle="modal" data-target="#miercoles" class="stat-icon dib flat-color-3">
-                                <i class="fa fa-calendar-o"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="text-left dib">
-                                    <div class="stat-text"><span class="count"><?php echo $cantidad_miercoles; ?></span></div>
-                                    <div class="stat-heading">Miércoles</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <div    class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-five">
-                        <div data-toggle="modal" data-target="#jueves" class="stat-icon dib flat-color-3">
-                                <i class="fa fa-calendar-o"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="text-left dib">
-                                    <div class="stat-text"><span class="count"><?php echo $cantidad_jueves; ?></span></div>
-                                    <div class="stat-heading">Jueves</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        
-            <div class="col-lg-2 col-md-6">
-                <div   class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-five">
-                        <div data-toggle="modal" data-target="#vienes" class="stat-icon dib flat-color-3">
-                                <i class="fa fa-calendar-o"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="text-left dib">
-                                    <div class="stat-text"><span class="count"><?php echo $cantidad_viernes; ?></span></div>
-                                    <div class="stat-heading">Viernes</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                        
-                
-            </div>
-
-            <div class="col-lg-2 col-md-6">
-                <div   class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-five">
-                        <div data-toggle="modal" data-target="#sabado" class="stat-icon dib flat-color-3">
-                                <i class="fa fa-calendar-o"></i>
-                            </div>
-                            <div class="stat-content">
-                                <div class="text-left dib">
-                                    <div class="stat-text"><span class="count"><?php echo $cantidad_sabado; ?></span></div>
-                                    <div class="stat-heading">Sábado</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>     
-            </div>                        
-        </div>
-    </div> 
-</div-->
-<!-- /Widgets -->
-<?php $query_activas = "SELECT count(main_status) from cntr WHERE main_status != 'NO ASIGNADA' AND main_status != 'ON BOARD'AND main_status != 'TERMINADA'";
-        $result_activas= mysqli_query($conn, $query_activas);
-        if (mysqli_num_rows($result_activas) == 1) {
-        $row = mysqli_fetch_array($result_activas);
-        $cantidad_activas =  $row['count(main_status)'];}
-
-        $query_no_asigned = "SELECT count(main_status) from cntr WHERE main_status = 'NO ASIGNADA'";
-        $result_no_asigned= mysqli_query($conn, $query_no_asigned);
-        if (mysqli_num_rows($result_no_asigned) == 1) {
-        $row = mysqli_fetch_array($result_no_asigned);
-        $cantidad_no_asigned = $row['count(main_status)'];}
-
-        $query_on_board = "SELECT count(main_status) from cntr where main_status = 'ON BOARD'";
-        $result_on_board= mysqli_query($conn, $query_on_board);
-        if (mysqli_num_rows($result_on_board) == 1) {
-            $row = mysqli_fetch_array($result_on_board);
-            $cantidad_on_board =  $row['count(main_status)'];}
-            
-        $query_problem = "SELECT count(main_status) from cntr where  main_status = 'CON PROBLEMA'";
-        $result_problem = mysqli_query($conn, $query_problem);
-        if (mysqli_num_rows($result_problem) == 1) {
-            $row = mysqli_fetch_array($result_problem);
-            $cantidad_problem =  $row['count(main_status)'];}
-        
-        $query_assigned = "SELECT count(main_status) from cntr where main_status = 'ASIGNADA'";
-        $result_assigned= mysqli_query($conn, $query_assigned);
-        if (mysqli_num_rows($result_assigned) == 1) {
-            $row = mysqli_fetch_array($result_assigned);
-            $cantidad_assigned =  $row['count(main_status)'];}
-
-        $query_go_to_load = "SELECT count(main_status) from cntr where main_status = 'YENDO A CARGAR'";
-        $result_go_to_load = mysqli_query($conn, $query_go_to_load);
-        if (mysqli_num_rows($result_go_to_load) == 1) {
-            $row = mysqli_fetch_array($result_go_to_load);
-            $cantidad_go_to_load =  $row['count(main_status)'];}
-
-        $query_loading = "SELECT count(main_status) from cntr where main_status = 'CARGANDO'";
-        $result_loading= mysqli_query($conn, $query_loading);
-        if (mysqli_num_rows($result_loading) == 1) {
-            $row = mysqli_fetch_array($result_loading);
-            $cantidad_loading =  $row['count(main_status)'];}
-
-        $query_custom_place = "SELECT count(main_status) from cntr where  main_status = 'CUSTOM PLACE'";
-        $result_custom_place= mysqli_query($conn, $query_custom_place);
-        if (mysqli_num_rows($result_custom_place) == 1) {
-            $row = mysqli_fetch_array($result_custom_place);
-            $cantidad_custom_place =  $row['count(main_status)'];}
-        
-        $query_go_to_unload = "SELECT count(main_status) from cntr where main_status = 'YENDO A DESCARGAR'";
-        $result_go_to_unload= mysqli_query($conn, $query_go_to_unload);
-        if (mysqli_num_rows($result_go_to_unload) == 1) {
-            $row = mysqli_fetch_array($result_go_to_unload);
-            $cantidad_go_to_unload =  $row['count(main_status)'];}
-        
-        $query_staking = "SELECT count(main_status) from cntr where main_status = 'STAKING'";
-        $result_staking= mysqli_query($conn, $query_staking);
-        if (mysqli_num_rows($result_staking) == 1) {
-            $row = mysqli_fetch_array($result_staking);
-            $cantidad_staking =  $row['count(main_status)'];}?>
 <div class="breadcrumbs">
     <h2 style="text-align: center; background:#17A589; color:white; padding-top:0.5%;">Cargas por Status</h2>
     <div class="breadcrumbs-inner">
@@ -339,7 +229,7 @@ $result_detalles_sabado = mysqli_query($conn, $query_detalles_sabado);
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count"><?php echo $cantidad_go_to_load; ?></span></div>
-                                    <div class="stat-heading">Yendo a carga</div>
+                                    <div class="stat-heading">Yendo a cargar</div>
                                 </div>
                             </div>
                         </div>
@@ -434,4 +324,3 @@ $result_detalles_sabado = mysqli_query($conn, $query_detalles_sabado);
         </div>
     </div>
 </div>
-</div> <!-- /Widgets -->

@@ -2,10 +2,7 @@
 
 include('../db.php');
 
-
-
 // revisar si tiene aplicaciones en asignacion.
-
 
 if (isset($_GET['id'])) {   // me traigo la informacion segun ID seleccionada. 
 
@@ -13,10 +10,8 @@ if (isset($_GET['id'])) {   // me traigo la informacion segun ID seleccionada.
 
   if (isset($_POST['editar_transporte'])) {
 
-    echo 'hola editar transporte';
-
     $razon_social = $_POST['razon_social'];
-    $cuit =  $_POST['cuit'];
+    $cuit =  $_POST['tax_id'];
     $direccion =  $_POST['direccion'];
     $ciudad =  $_POST['ciudad'];
     $country =  $_POST['country'];
@@ -36,14 +31,32 @@ if (isset($_GET['id'])) {   // me traigo la informacion segun ID seleccionada.
 
   if (!$result) {
 
-    $_SESSION['message'] = 'el transporte' . $razon_social . ' no pudo ser actualizado';
-    $_SESSION['message_type'] = 'danger';
-    header('location:../views/Transportes_user_basic.php');
+    if ($_SESSION['permiso'] == 'Traffic') {
+
+      $_SESSION['message'] = 'el transporte' . $razon_social . ' no pudo ser actualizado';
+      $_SESSION['message_type'] = 'danger';
+      header('location:../views/transportes_traffic.php');
+    } elseif ($_SESSION['permiso'] == 'Master') {
+
+      $_SESSION['message'] = 'el transporte' . $razon_social . ' no pudo ser actualizado';
+      $_SESSION['message_type'] = 'danger';
+      header('location:../views/transportes_super_user.php');
+    }
   } else {
 
-    $_SESSION['message'] = 'Se edito correctamente el transporte' . $razon_social;
-    $_SESSION['message_type'] = 'success';
-    header('location:../views/Transportes_user_basic.php');
+    if ($_SESSION['permiso'] == 'Traffic') {
+
+      $_SESSION['message'] = 'Se edito correctamente el transporte' . $razon_social;
+      $_SESSION['message_type'] = 'success';
+      header('location:../views/transportes_traffic.php');
+
+    } elseif ($_SESSION['permiso'] == 'Master') {
+
+      $_SESSION['message'] = 'Se edito correctamente el transporte' . $razon_social;
+      $_SESSION['message_type'] = 'success';
+      header('location:../views/transportes_super_user.php');
+      
+    }
   }
 
   // Super User
@@ -111,12 +124,12 @@ if (isset($_POST['agregar_transporte'])) {
 
     $_SESSION['message'] = 'Algo falló. Intenta nuevamente cargar Tranporte';
     $_SESSION['message_type'] = 'danger';
-    header('location:../views/Transportes_user_basic.php');
+    header('location:../views/transportes_traffic.php');
   } else {
 
     $_SESSION['message'] = 'Se cargó correctamente el transporte' . $razon_social;
     $_SESSION['message_type'] = 'success';
-    header('location:../views/Transportes_user_basic.php');
+    header('location:../views/transportes_traffic.php');
   }
 }
 

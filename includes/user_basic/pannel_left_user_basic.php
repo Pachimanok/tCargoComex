@@ -4,19 +4,19 @@
             <div style="background:#2e313f; color:white;" id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a  style="color:white;"href="../views/view_user_basic.php"><i class="menu-icon fa fa-laptop"></i>Inicio</a>
+                        <a  style="color:white;"href="../views/view_traffic.php"><i class="menu-icon fa fa-laptop"></i>Inicio</a>
                     </li>
                     <li>
-                        <a style="color:white;" title="Transportes" href="../views/Transportes_user_basic.php"><i class="menu-icon ti-truck"></i>Transportes</a>
+                        <a style="color:white;" title="Transportes" href="../views/transportes_traffic.php"><i class="menu-icon ti-truck"></i>Transportes</a>
                     </li>
                     <li>
-                        <a style="color:white;" title="Ata y Despachantes" href="../views/ATA_y_despa_user_basic.php"><i class="menu-icon ti-write"></i>ATAs</a>
+                        <a style="color:white;" title="Ata y Despachantes" href="../views/misAtas.php"><i class="menu-icon ti-write"></i>ATAs</a>
                     </li>
                     <li>
                         <a style="color:white;" title="Ata y Despachantes" href="../views/despa_user_basic.php"><i class="menu-icon ti-write"></i>Despachantes</a>
                     </li>
                     <li>
-                        <a style="color:white;" title="Choferes "href="../views/choferes_user_basic.php"><i class="menu-icon ti-user"></i>Choferes</a>
+                        <a style="color:white;" title="Choferes "href="../views/choferes.php"><i class="menu-icon ti-user"></i>Choferes</a>
                     </li>
                     <li>
                         <a style="color:white;" title="Agencia de Ingreso" href="../views/misAgencias_user_basic.php"><i class="menu-icon ti-shift-right-alt"></i>Agencias de Ingreso</a>

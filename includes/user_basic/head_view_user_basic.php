@@ -19,7 +19,7 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="../views/view_user_basic.php">Cargas</a></li>
+                            <li><a href="../views/view_traffic.php">Cargas</a></li>
                             <li><a href="../views/view_instructivos.php">Instructivos</a></li>
                             <li><a href="#">Cotizaciones</a></li>
                             <li><a href="../views/control_flota.php">Flota</a></li>

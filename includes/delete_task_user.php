@@ -11,14 +11,11 @@ if(isset($_GET['id'])) {
   }
 
   echo "<script>
-    location.href='../views/view_user_basic.php'; 
+    location.href='../views/view_traffic.php'; 
     alert('Se elimino Carga correctamente');
     
   </script>";
 
- // $_SESSION['message'] = 'Task Removed Successfully';
-  //$_SESSION['message_type'] = 'danger';
-  // header('Location: index.php');
 }
 
 ?>

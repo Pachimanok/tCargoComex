@@ -13,7 +13,7 @@ if(isset($_GET['id'])) {
 
     $_SESSION['message'] = 'El transporte tiene aplicaciones. No se puede eliminar';
         $_SESSION['message_type'] = 'danger';
-        header('location:../views/Transportes_user_basic.php');
+        header('location:../views/transportes_traffic.php');
 
 
     }else{

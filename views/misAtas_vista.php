@@ -1,18 +1,7 @@
-<?php include('../db.php'); ?>
-
-
-<?php include("../fijos/headerdirect.php") ?>
-
-
-
-<?php include("../includes/user_basic/pannel_left_user_basic.php") ?>
-
-<?php include('../fijos/Pannel_right_header.php'); ?>
-<br>
 <div class="container-fluid">
     <div class="card">
         <div style="text-align:center;" class="card-header">
-            <strong class="card-title">Agentes de Transporte</strong>
+            <strong class="card-title">Agentes de Transporte (ATA)</strong>
         </div>
         <div class="card-body">
             <div class="dataTables_info" id="bootstrap-data-table_info" role="status" aria-live="polite"></div>
@@ -95,13 +84,13 @@
                                                             </div>
                                                             <div class="row">
                                                                 <div class="col-sm-2 pt-2">
-                                                                    <label class="form-control-label">City:</label>
+                                                                    <label class="form-control-label">Ciudad:</label>
                                                                 </div>
                                                                 <div class="col-sm-2">
                                                                     <input class="form-control" style="margin-right: 1%; margin-left:1%;" type="text" name="ciudad" value="<?php echo $ciudad; ?>">
                                                                 </div>
                                                                 <div class="col-sm-1 pt-2">
-                                                                    <label class="form-control-label">Country:</label>
+                                                                    <label class="form-control-label">País:</label>
                                                                 </div>
                                                                 <div class="col-sm-3">
                                                                     <input class="form-control" style="margin-right: 1%; margin-left:1%;" type="text" name="country" value="<?php echo $country; ?>">
@@ -226,13 +215,10 @@
             </div>
             <form action="../Reporte_user_basic/misAta.php" method="POST">
                 <div class="row">
-
                     <div class="col-sm-6 mx-auto text-center">
                         <button type="submit" id="export_data" name="export_data" value="Export to excel" class="btn btn-primary">Descargar Listado</button>
                         <button type="button" data-toggle="modal" data-target="#agregarATA" class="btn btn-outline-primary">Agregar ATA</button>
-
                     </div>
-
                 </div>
             </form>
             <br>
@@ -268,13 +254,13 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-sm-1 pt-2">
-                                <label class="form-control-label">City:</label>
+                                <label class="form-control-label">Ciudad:</label>
                             </div>
                             <div class="col-sm-2">
                                 <input class="form-control" style="margin-right: 1%; margin-left:1%;" type="text" name="ciudad" placeholder="Mendoza">
                             </div>
                             <div class="col-sm-1 pt-2">
-                                <label class="form-control-label">Country:</label>
+                                <label class="form-control-label">País:</label>
                             </div>
                             <div class="col-sm-3">
                                 <input class="form-control" style="margin-right: 1%; margin-left:1%;" type="text" name="country" placeholder="Argentina">
@@ -316,6 +302,3 @@
         </div>
     </div>
 </div>
-<br>
-
-<?php include('../fijos/footerdirect.php'); ?>

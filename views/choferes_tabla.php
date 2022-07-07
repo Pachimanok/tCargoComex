@@ -1,17 +1,3 @@
-<?php include('../db.php'); ?>
-
-<?php include('../fijos/headerdirect.php'); ?>
-
-<?php include("../includes/user_basic/pannel_left_user_basic.php") ?>
-
-<?php include('../fijos/Pannel_right_header.php'); ?>
-
-<?php
-
-
-?>
-
-<br>
 <div class="container">
     <div class="card">
         <div style="text-align:center;" class="card-header">
@@ -257,8 +243,6 @@
     </form>
     <br>
 </div>
-</div>
-<br>
 <!-- Modal Agegar ATA -->
 <div class="modal fade" id="agregarATA" tabindex="-1" role="dialog" aria-labelledby="scrollmodalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -274,7 +258,7 @@
                                 <label class="form-control-label" for="">Transporte:</label>
                             </div>
                             <div class="col-sm-4">
-                                <select name="transporte[]" id="selectSm" class="form-control-sm form-control" require>
+                                <select name="transporte[]" id="selectSm" class="form-control-sm form-control" required>
                                     <option value="">-. Seleccionar Transporte.-</option>
                                     <?php
 
@@ -380,6 +364,3 @@
         </div>
     </div>
 </div>
-
-
-<?php include('../fijos/footerdirect.php'); ?>

@@ -14,4 +14,11 @@ if (!$conn) {
   echo "error de depuración: " . mysqli_connect_error() . PHP_EOL;
   exit;
 }
+
+/* $conn = mysqli_connect(
+  '31.170.161.22',
+  'u101685278_sandboxBotZero',
+  'Pachiman9102$',
+  'u101685278_sandboxBotZero'
+); */
 ?>

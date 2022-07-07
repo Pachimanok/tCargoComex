@@ -210,11 +210,11 @@ if($file == null){
     }
   
        
-        header('Location: https://api.whatsapp.com/send?phone='.$contacto.'&text=Instruccion%20de%20carga%20'.$booking.'%20-%20Shipper:%20'.$shipper.'%20:%20https://rail.ar/covidrci/public/instructivos/'.$booking.'/'.$cntr_number.'/'.'instructivo_'.$booking.'_'.$cntr_number.'.pdf');
+        header('Location: https://api.whatsapp.com/send?phone='.$contacto.'&text=Instruccion%20de%20carga%20'.$booking.'%20-%20Shipper:%20'.$shipper.'%20:%20http://botzero.ar/public/instructivos/'.$booking.'/'.$cntr_number.'/'.'instructivo_'.$booking.'_'.$cntr_number.'.pdf');
     
 }else{
 
-        header('Location: https://api.whatsapp.com/send?phone='.$contacto.'&text=Instruccion%20de%20carga%20'.$booking.'%20-%20Shipper:%20'.$shipper.'%20:%20https://rail.ar/covidrci/public/instructivos/'.$booking.'/'.$cntr_number.'/'.'instructivo_'.$booking.'_'.$cntr_number.'.pdf');
+        header('Location: https://api.whatsapp.com/send?phone='.$contacto.'&text=Instruccion%20de%20carga%20'.$booking.'%20-%20Shipper:%20'.$shipper.'%20:%20http://botzero.ar/public/instructivos/'.$booking.'/'.$cntr_number.'/'.'instructivo_'.$booking.'_'.$cntr_number.'.pdf');
 
 }
 

@@ -2,12 +2,22 @@
 
 <?php include("../fijos/header.php") ?>
 
-<?php include("../includes/user_basic/pannel_left_user_basic.php")  ?>
+<?php
+
+    if($permiso =='Traffic'){
+
+        include("../includes/user_basic/pannel_left_user_basic.php"); 
+
+    }else{
+   
+    include("../includes/super_user/pannel_left_super_user.php");
+
+     }
+ ?>
 
 <?php include("../fijos/Pannel_right_header.php") ?>
 
-
-<?php include('../includes/user_basic/head_view_user_basic.php'); ?>
+<?php include('../includes/user_basic/head_view_traffic.php'); ?>
 
 
 <?php
@@ -334,7 +344,7 @@ if(mysqli_num_rows($result) == 1){
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6" style="text-align: center;" >
                     <!--a href="../formularios/enviar_whatsApp.php?cntr_number=<?php echo $cntr_number?>" target="_blank" class="btn btn-info">WhatsApp</a-->
-                    <a href="https://rail.ar/covidrci/public/api/imprimirIns?cntr_number=<?php echo $cntr_number?>" class="btn btn-info">Generar</a>
+                    <a href="http://botzero.ar/api/imprimirCarga?cntr_number=<?php echo $cntr_number?>" class="btn btn-info">Generar</a>
                     <a href="../views/view_instructivos.php"  class="btn btn-secondary">Instrucciones</a>
                     <!--a href="../formularios/enviar_mail.php?cntr_number=<?php echo $cntr_number?>" class="btn btn-info">E-mail</a-->
                 </div>
